@@ -75,8 +75,11 @@ downloadFiles "install" $installFiles $installFilesFolder
 )
 downloadFiles "dot-posh" $dotPoshFiles $dotPoshFolder
 
-### configure terminal settings
+### Configure terminal settings
 . "$installFilesFolder\configure-terminal-settings.ps1"
+
+### Copy dot-posh
+downloadFile "https://raw.githubusercontent.com/teylorrt/dotposh/refs/heads/main/dot-posh.ps1" $HOME
 
 ### remove install files
 Write-Host "Removing install files..."
