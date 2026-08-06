@@ -84,9 +84,11 @@ Remove-Item -Path $installFilesFolder -Recurse -Force
 
 
 ### Set initialization of Dot-Posh in profile
-'' | Out-File -Append -Encoding default -FilePath $profile
-'# load Dot-Posh' | Out-File -Append -Encoding default -FilePath $profile
-'. "$HOME\dot-posh.ps1"' | Out-File -Append -Encoding default -FilePath $profile
+if (-not (Select-String -Pattern '. "$HOME\dot-posh.ps1"' -Path $profile -Quiet)) {
+    '' | Out-File -Append -Encoding default -FilePath $profile
+    '# load Dot-Posh' | Out-File -Append -Encoding default -FilePath $profile
+    '. "$HOME\dot-posh.ps1"' | Out-File -Append -Encoding default -FilePath $profile
+}
 
 ### reload profile
 . $PROFILE
