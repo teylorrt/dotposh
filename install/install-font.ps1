@@ -1,6 +1,7 @@
 #setting font
 $fontName = "MesloLGL Nerd Font"
-oh-my-posh font install meslo | Invoke-Expression
+Write-Host "Installing font meslo"
+oh-my-posh font install meslo
 
 $fontInput = '{ "face":"FONT_NAME" }';
 $fontInput = $fontInput.Replace('FONT_NAME', $fontName)
