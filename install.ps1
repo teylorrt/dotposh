@@ -1,7 +1,7 @@
 
 $global:installFilesFolder = "$HOME\dot-posh-install"
 $dotPoshFolder = "$HOME\dotfiles\dot-posh"
-$baseUri = "https://raw.githubusercontent.com/teylorrt/dotfiles/refs/heads/main"
+$baseUri = "https://raw.githubusercontent.com/teylorrt/dotposh/refs/heads/main"
 
 function ensureFolder {
     param (
